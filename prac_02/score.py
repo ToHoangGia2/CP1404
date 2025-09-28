@@ -1,7 +1,10 @@
+from random import *
+
 def main():
     score = float(input("Enter your score: "))
     print(determine_score(score))
-
+    random_score = randint(0, 100)
+    print(f"random score ({random_score}) is: {determine_score(random_score)}")
 
 def determine_score(score):
     if score < 0 or score > 100:
@@ -12,3 +15,5 @@ def determine_score(score):
         return "Passable"
     else:
         return "Bad"
+
+main()
