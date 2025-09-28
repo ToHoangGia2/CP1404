@@ -8,7 +8,7 @@ def main():
     print(f"random score ({random_score}) is: {determine_score(random_score)}")
 
 def determine_score(score):
-    """this function will return the determined input"""
+    """this function will return the determined score"""
     if score < 0 or score > 100:
         return "Invalid score"
     elif score >= 90:
