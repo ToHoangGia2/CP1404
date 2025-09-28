@@ -1,7 +1,7 @@
 from random import *
 
 def main():
-    """this finction will get score and print the determined score"""
+    """this function will get score and print the determined score"""
     score = float(input("Enter your score: "))
     print(determine_score(score))
     random_score = randint(0, 100)
