@@ -25,4 +25,4 @@ print("Finished.")
 # ZeroDivisionError occur when the denominator number entered is 0
 
 # Could you change the code to avoid the possibility of a ZeroDivisionError?
-# you could add a while function to check if the user entered 0 and ask user to input again
+# you could add a function to check if the user entered 0 and ask user to input again
