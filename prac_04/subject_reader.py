@@ -28,6 +28,7 @@ def load_data(filename=FILENAME):
     return lines
 
 def display_subjects(data):
+    """This function will display the subjects data"""
     for i in data:
         print(f"{i[0]:5} is taught by {i[1]:14} and has {i[2]:5} students")
 
