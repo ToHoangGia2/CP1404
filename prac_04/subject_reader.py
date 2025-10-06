@@ -8,7 +8,7 @@ lines = []
 
 def main():
     data = load_data(FILENAME)
-    print(data)
+    display_data(data)
 
 
 def load_data(filename=FILENAME):
@@ -25,6 +25,10 @@ def load_data(filename=FILENAME):
         #print("----------")
         lines.append(parts)
     input_file.close()
+    return lines
 
+def display_data(data):
+    for i in range (len(data)):
+        print(f"{data[i][0]:5} is taught by {data[i][1]:14} and has {data[i][2]:5} students")
 
 main()
