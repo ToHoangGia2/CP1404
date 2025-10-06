@@ -28,7 +28,7 @@ def load_data(filename=FILENAME):
     return lines
 
 def display_subjects(data):
-    for i in range (len(data)):
-        print(f"{data[i][0]:5} is taught by {data[i][1]:14} and has {data[i][2]:5} students")
+    for i in data:
+        print(f"{i[0]:5} is taught by {i[1]:14} and has {i[2]:5} students")
 
 main()
