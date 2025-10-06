@@ -7,8 +7,8 @@ FILENAME = "subject_data.txt"
 lines = []
 
 def main():
-    data = load_data(FILENAME)
-    display_data(data)
+    subjects = load_data(FILENAME)
+    display_subjects(subjects)
 
 
 def load_data(filename=FILENAME):
@@ -27,7 +27,7 @@ def load_data(filename=FILENAME):
     input_file.close()
     return lines
 
-def display_data(data):
+def display_subjects(data):
     for i in range (len(data)):
         print(f"{data[i][0]:5} is taught by {data[i][1]:14} and has {data[i][2]:5} students")
 
