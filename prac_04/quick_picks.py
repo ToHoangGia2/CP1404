@@ -14,3 +14,14 @@ while valid:
             print("Please enter a positive integer")
     except ValueError:
         print("Please enter a valid number.")
+
+for i in range(user_input):
+    LIST_OF_NUMBERS = []
+    for j in range(NUMBERS_EACH_LINE):
+        random_number = randint(MINIMUM, MAXIMUM)
+        while random_number in LIST_OF_NUMBERS:
+            random_number = randint(MINIMUM, MAXIMUM)
+        LIST_OF_NUMBERS.append(random_number)
+    LIST_OF_NUMBERS.sort()
+
+print(LIST_OF_NUMBERS)
