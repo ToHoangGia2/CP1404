@@ -24,4 +24,4 @@ for i in range(user_input):
         LIST_OF_NUMBERS.append(random_number)
     LIST_OF_NUMBERS.sort()
 
-print(LIST_OF_NUMBERS)
+    print(" ".join(f"{number:3}" for number in LIST_OF_NUMBERS))
