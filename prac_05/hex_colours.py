@@ -1,11 +1,19 @@
-COLOURS = {"Bittersweet Shimmer":"#bf4f51",
-           "Bole":"#79443b",
-           "Boysenberry":"#873260",
-           "Brandeis Blue":"#0070ff",
-           "British Racing Green":"#004225",
-           "Brunswick Green":"#1b4d3e",
-           "Bubble Gum":"#ffc1cc",
-           "Burlywood":"#deb887",
-           "CadetBlue":"#5f9ea0",
-           "Candy Pink":"#e4717a",
-           "Carrot Orange":"#ed9121"}
+COLOURS = {"bittersweet shimmer":"#bf4f51",
+           "bole":"#79443b",
+           "boysenberry":"#873260",
+           "brandeis blue":"#0070ff",
+           "british racing green":"#004225",
+           "brunswick green":"#1b4d3e",
+           "bubble gum":"#ffc1cc",
+           "burlywood":"#deb887",
+           "cadetblue":"#5f9ea0",
+           "candy pink":"#e4717a",
+           "carrot orange":"#ed9121"}
+
+colour_choice = input("What colour do you want? ").lower()
+while colour_choice != "":
+    try:
+        print(f"the {colour_choice} has key: {COLOURS[colour_choice]}")
+    except KeyError:
+        print("Sorry, I didn't find that colour.")
+    colour_choice = input("What colour do you want? ")
