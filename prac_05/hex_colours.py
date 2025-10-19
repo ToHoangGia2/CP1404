@@ -1,0 +1,11 @@
+COLOURS = {"Bittersweet Shimmer":"#bf4f51",
+           "Bole":"#79443b",
+           "Boysenberry":"#873260",
+           "Brandeis Blue":"#0070ff",
+           "British Racing Green":"#004225",
+           "Brunswick Green":"#1b4d3e",
+           "Bubble Gum":"#ffc1cc",
+           "Burlywood":"#deb887",
+           "CadetBlue":"#5f9ea0",
+           "Candy Pink":"#e4717a",
+           "Carrot Orange":"#ed9121"}
