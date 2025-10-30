@@ -20,10 +20,3 @@ class Guitar:
         """return True if the guitar is vintage"""
         return self.get_age() >= APPROVED_AGE
 
-def test():
-    guitar = Guitar("Guitar", 1977, 10)
-    print(guitar)
-    print(guitar.get_age())
-    print(guitar.is_vintage())
-
-test()
