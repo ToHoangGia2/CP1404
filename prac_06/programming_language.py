@@ -1,5 +1,5 @@
 class ProgrammingLanguage:
-    def __init__(self, name="", typing="", reflection="", year=""):
+    def __init__(self, name="", typing="", reflection="", year=0):
         """add value to self"""
         self.name = name
         self.typing = typing
