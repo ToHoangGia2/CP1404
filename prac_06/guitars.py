@@ -2,7 +2,6 @@ from prac_06.guitar import Guitar
 
 def main():
     guitars =[]
-
     print("My guitars!")
     name = input("Name: ")
     while name !="":
@@ -12,8 +11,17 @@ def main():
         guitars.append(new_guitar)
         name = input("Name: ")
 
-    guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
-    guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
+    #guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
+    #guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
+
+    print("\n...snip...\n")
+
+    print("These are my guitars:")
+    for i, guitar in enumerate(guitars, 1):
+        vintage_string=""
+        if guitar.is_vintage():
+            vintage_string = "(Vintage)"
+        print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
 
 
 def get_number(text, allow_float):
@@ -28,6 +36,7 @@ def get_number(text, allow_float):
                 print("Please enter a number greater than 0")
         except ValueError:
             print("Please enter a valid number")
+    return number
 
 
 main()
