@@ -28,7 +28,7 @@ def main():
         reflection = parts[2] == "Yes"
         # Construct a ProgrammingLanguage object using the elements
         # year should be an int
-        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]))
+        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]), parts[4])
         # Add the language we've just constructed to the list
         languages.append(language)
     # Close the file as soon as we've finished reading it
@@ -73,7 +73,7 @@ def using_namedtuple():
     in_file.close()
 
 
-# using_namedtuple()
+using_namedtuple()
 
 
 def using_csv_namedtuple():
