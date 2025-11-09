@@ -14,15 +14,16 @@ MENU = """- (L)oad projects
 def main():
     """a"""
     print("Welcome to Pythonic Project Management")
-    load_projects()
+    projects = load_projects()
     print(MENU)
     user_input = input(">>> ").upper()
     while user_input != "Q":
         if user_input == "L":
             load_projects()
+
         elif user_input == "S":
-            #TODO save project
-            print("\n WORK IN PROGRESS")
+            save_projects(projects)
+            print("saved projects successfully")
 
         elif user_input == "D":
             #TODO display project
@@ -44,11 +45,14 @@ def main():
             print("Invalid input")
         user_input = input(">>> ").upper()
 
-    #TODO save project
+    save_or_not = input("Would you like to save to projects.txt?").upper()
+    if save_or_not == "Y":
+        save_projects(projects)
     print("Thank you for using custom-built project management software.")
 
 
 def load_projects():
+    """load projects to a list then return it"""
     projects = []
     projects_loaded = 0
     with open(FILENAME,"r") as in_file:
@@ -65,6 +69,13 @@ def load_projects():
             projects_loaded += 1
     print(f"Loaded {projects_loaded} projects from {FILENAME}.")
     return projects
+
+def save_projects(projects):
+    """save projects to txt file"""
+    with open(FILENAME,"w") as out_file:
+        print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)
+        for project in projects:
+            print(f"{project.name}\t{project.start_date:%d/%m/%Y}\t{project.priority}\t{project.cost_estimate}\t{project.completion_percentage}", file=out_file)
 
 
 main()
