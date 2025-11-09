@@ -29,8 +29,9 @@ def main():
             display_projects(projects)
 
         elif user_input == "F":
-            #TODO display filter
-            print("\n WORK IN PROGRESS")
+            filtered_dates = filter_dates(projects)
+            for date in filtered_dates:
+                print(date)
 
         elif user_input == "A":
             print("Let's add a new project")
@@ -105,7 +106,7 @@ def determine_complete(projects):
 def create_new_project():
     """create a new project"""
     project_name = input("Name: ")
-    date = get_valid_date()
+    date = get_valid_date("Start date (dd/mm/yy): ")
     priority = int(input("Priority: "))
     cost_estimate = float(input("Cost Estimate:"))
     completion_percentage = int(input("Completion Percentage:"))
@@ -113,14 +114,24 @@ def create_new_project():
     return project
 
 
-def get_valid_date():
-    """get a valid date"""
+def get_valid_date(Text):
+    """get a valid date with input text"""
     while True:
         try:
-            date_string = input("Start date (dd/mm/yy): ")
+            date_string = input(Text).strip()
             date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
             return date
         except ValueError:
             print("Invalid date")
+
+def filter_dates(projects):
+    """filter projects by date"""
+    filtered_projects = []
+    filter_date = get_valid_date("Show projects that start after date (dd/mm/yy): ")
+    projects.sort()
+    for project in projects:
+        if project.start_date >= filter_date:
+            filtered_projects.append(project)
+    return filtered_projects
 
 main()
