@@ -5,11 +5,13 @@ FILENAME = 'guitars.csv'
 def main():
     """a"""
     guitars = load_guitars()
-
-    max_name_length = max(len(guitar.name) for guitar in guitars)
-
     guitars.sort()
 
+    display_guitars(guitars)
+
+
+def display_guitars(guitars):
+    max_name_length = max(len(guitar.name) for guitar in guitars)
     for guitar in guitars:
         print(f"{guitar.name:{max_name_length + 3}}{guitar.year:6}{guitar.cost}")
 
