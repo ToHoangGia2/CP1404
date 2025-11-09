@@ -14,6 +14,38 @@ MENU = """- (L)oad projects
 def main():
     """a"""
     print("Welcome to Pythonic Project Management")
+    load_projects()
+    print(MENU)
+    user_input = input(">>> ").upper()
+    while user_input != "Q":
+        if user_input == "L":
+            load_projects()
+        elif user_input == "S":
+            #TODO save project
+            print("\n WORK IN PROGRESS")
+
+        elif user_input == "D":
+            #TODO display project
+            print("\n WORK IN PROGRESS")
+
+        elif user_input == "F":
+            #TODO display filter
+            print("\n WORK IN PROGRESS")
+
+        elif user_input == "A":
+            #TODO display add new proj
+            print("\n WORK IN PROGRESS")
+
+        elif user_input == "U":
+            #TODO display update
+            print("\n WORK IN PROGRESS")
+
+        else:
+            print("Invalid input")
+        user_input = input(">>> ").upper()
+
+    #TODO save project
+    print("Thank you for using custom-built project management software.")
 
 
 def load_projects():
@@ -34,3 +66,5 @@ def load_projects():
     print(f"Loaded {projects_loaded} projects from {FILENAME}.")
     return projects
 
+
+main()
