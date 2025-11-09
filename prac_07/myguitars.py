@@ -14,6 +14,8 @@ def main():
 
     max_name_length = max(len(guitar.name) for guitar in guitars)
 
+    guitars.sort()
+
     for guitar in guitars:
         print(f"{guitar.name:{max_name_length + 3}}{guitar.year:6}{guitar.cost}")
 
