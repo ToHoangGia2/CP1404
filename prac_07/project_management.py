@@ -19,15 +19,15 @@ def main():
     user_input = input(">>> ").upper()
     while user_input != "Q":
         if user_input == "L":
-            load_projects()
+            projects = load_projects()
 
         elif user_input == "S":
             save_projects(projects)
             print("saved projects successfully")
 
         elif user_input == "D":
-            #TODO display project
-            print("\n WORK IN PROGRESS")
+            display_projects(projects)
+
 
         elif user_input == "F":
             #TODO display filter
@@ -76,6 +76,23 @@ def save_projects(projects):
         print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)
         for project in projects:
             print(f"{project.name}\t{project.start_date:%d/%m/%Y}\t{project.priority}\t{project.cost_estimate}\t{project.completion_percentage}", file=out_file)
+
+def display_projects(projects):
+    """display projects by date"""
+    not_complete, completed = sort_complete(projects)
+    print(not_complete)
+    print(completed)
+
+
+def sort_complete(projects):
+    not_complete = []
+    completed = []
+    for project in projects:
+        if project.is_complete():
+            completed.append(project)
+        else:
+            not_complete.append(project)
+    return(not_complete, completed)
 
 
 main()
