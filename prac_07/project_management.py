@@ -39,8 +39,7 @@ def main():
             projects.append(project)
 
         elif user_input == "U":
-            #TODO display update
-            print("\n WORK IN PROGRESS")
+            update_projects(projects)
 
         else:
             print("Invalid input")
@@ -133,5 +132,37 @@ def filter_dates(projects):
         if project.start_date >= filter_date:
             filtered_projects.append(project)
     return filtered_projects
+
+def update_projects(projects):
+    """update projects by percentages and priorities"""
+    index = 0
+    for project in projects:
+        print(f"{index} {project}")
+        index += 1
+
+    valid = False
+    while not valid:
+        try:
+            project_choice = int(input("Project choice: "))
+            project = projects[project_choice]
+            print(project)
+            valid = True
+        except (ValueError, IndexError):
+            print("Invalid choice")
+
+    project.completion_percentage = get_int_between("New Percentage: ", 0, 100)
+    project.priority = get_int_between("Priority: ", 0, 100)
+
+
+def get_int_between(string, min_value, max_value):
+    while True:
+        value = input(string).strip()
+        try:
+            value = int(value)
+            if min_value <= value <= max_value:
+                return value
+            print(f"Enter a number between {min_value} and {max_value}.")
+        except ValueError:
+            print("Invalid input — enter a number.")
 
 main()
