@@ -9,5 +9,8 @@ class Project:
     def __str__(self):
         return (f"{self.name}, start: {self.start_date}, priority {self.priority}, estimate: ${self.cost_estimate}, completion: {self.completion_percentage}%")
 
+    def __lt__(self, other):
+        return self.priority < other.priority
+
     def is_complete(self):
         return self.completion_percentage >= 100
