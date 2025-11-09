@@ -79,12 +79,18 @@ def save_projects(projects):
 
 def display_projects(projects):
     """display projects by date"""
-    not_complete, completed = sort_complete(projects)
-    print(not_complete)
-    print(completed)
+    projects.sort()
+    not_complete, completed = determine_complete(projects)
+    print("Incomplete projects:")
+    for project in not_complete:
+        print(project)
+    print("Completed projects:")
+    for project in completed:
+        print(project)
 
 
-def sort_complete(projects):
+
+def determine_complete(projects):
     not_complete = []
     completed = []
     for project in projects:
