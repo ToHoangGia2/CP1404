@@ -28,14 +28,14 @@ def main():
         elif user_input == "D":
             display_projects(projects)
 
-
         elif user_input == "F":
             #TODO display filter
             print("\n WORK IN PROGRESS")
 
         elif user_input == "A":
-            #TODO display add new proj
-            print("\n WORK IN PROGRESS")
+            print("Let's add a new project")
+            project = create_new_project()
+            projects.append(project)
 
         elif user_input == "U":
             #TODO display update
@@ -43,6 +43,8 @@ def main():
 
         else:
             print("Invalid input")
+
+        print(MENU)
         user_input = input(">>> ").upper()
 
     save_or_not = input("Would you like to save to projects.txt?").upper()
@@ -100,5 +102,25 @@ def determine_complete(projects):
             not_complete.append(project)
     return(not_complete, completed)
 
+def create_new_project():
+    """create a new project"""
+    project_name = input("Name: ")
+    date = get_valid_date()
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost Estimate:"))
+    completion_percentage = int(input("Completion Percentage:"))
+    project = Project(project_name, date, priority, cost_estimate, completion_percentage)
+    return project
+
+
+def get_valid_date():
+    """get a valid date"""
+    while True:
+        try:
+            date_string = input("Start date (dd/mm/yy): ")
+            date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+            return date
+        except ValueError:
+            print("Invalid date")
 
 main()
