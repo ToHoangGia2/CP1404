@@ -10,6 +10,7 @@ class BoxLayoutDemo(App):
 
     def handle_greet(self):
         print('greet')
+        self.root.ids.output_label.text = "Hello "
 
 
 BoxLayoutDemo().run()
