@@ -11,5 +11,9 @@ class CovertMilesApp(App):
         self.root = Builder.load_file("convert_miles_km.kv")
         return self.root
 
+    def calculate(self,text):
+        miles = float(text)
+        km = miles * 1.60934
+        self.output_km = str(km)
 
 CovertMilesApp().run()

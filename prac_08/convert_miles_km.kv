@@ -16,9 +16,10 @@ BoxLayout:
 
     Button:
         text:'Convert miles to km'
+        on_press: app.calculate(input_mile.text)
 
     Label:
         id: output
-        text:output_km
+        text: app.output_km
         font_size: 50
         color: (1, 1, 0, 1)
