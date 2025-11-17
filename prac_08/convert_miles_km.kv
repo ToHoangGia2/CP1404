@@ -3,9 +3,10 @@ BoxLayout:
     BoxLayout:
         TextInput:
             id: input_mile
-            text: '34'
             font_size: 50
             multiline: False
+            on_text: app.calculate(input_mile.text)
+
         BoxLayout:
             size_hint_x: 0.25
             orientation: 'vertical'
