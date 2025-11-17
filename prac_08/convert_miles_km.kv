@@ -11,8 +11,10 @@ BoxLayout:
             orientation: 'vertical'
             Button:
                 text: 'Up'
+                on_press: app.up_and_down(input_mile.text, 1)
             Button:
                 text: 'Down'
+                on_press: app.up_and_down(input_mile.text, -1)
 
     Button:
         text:'Convert miles to km'

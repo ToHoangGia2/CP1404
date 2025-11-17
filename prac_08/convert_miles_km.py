@@ -23,5 +23,9 @@ class CovertMilesApp(App):
             miles = 0.0
         return miles
 
+    def up_and_down(self,text,change):
+        miles = self.text_to_number(text) + change
+        self.root.ids.input_mile.text = str(miles)
+
 
 CovertMilesApp().run()
