@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
+NUMBER = 1.60934
 
 class CovertMilesApp(App):
     output_km = StringProperty()
@@ -13,7 +14,7 @@ class CovertMilesApp(App):
 
     def calculate(self,text):
         miles = self.text_to_number(text)
-        km = miles * 1.60934
+        km = miles * NUMBER
         self.output_km = str(km)
 
     def text_to_number(self,text):
