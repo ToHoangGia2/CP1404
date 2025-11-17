@@ -12,8 +12,16 @@ class CovertMilesApp(App):
         return self.root
 
     def calculate(self,text):
-        miles = float(text)
+        miles = self.text_to_number(text)
         km = miles * 1.60934
         self.output_km = str(km)
+
+    def text_to_number(self,text):
+        try:
+            miles = float(text)
+        except ValueError:
+            miles = 0.0
+        return miles
+
 
 CovertMilesApp().run()
