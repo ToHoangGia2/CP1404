@@ -6,7 +6,8 @@ class Band:
     def __str__(self):
         return f"{self.name} ({self.members})"
 
-
+    def play(self):
+        return "\n".join(member.play() for member in self.members)
 
     def add(self, member):
         self.members.append(member)
