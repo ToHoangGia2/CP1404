@@ -4,7 +4,8 @@ class Band:
         self.members = []
 
     def __str__(self):
-        return f"{self.name} ({self.members})"
+        members_str = ", ".join(str(member) for member in self.members)
+        return f"{self.name} ({members_str})"
 
     def play(self):
         return "\n".join(member.play() for member in self.members)
