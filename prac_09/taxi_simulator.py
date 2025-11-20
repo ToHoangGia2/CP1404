@@ -30,6 +30,7 @@ def main():
 
     print(f"Total trip cost: ${total_cost:.2f}")
     print("Taxis are now:")
+    display_taxis(taxis)
 
 
 
@@ -51,7 +52,7 @@ def drive_taxi(current_taxi, total_cost):
 
 def choose_taxi(taxis):
     print("Taxis available:")
-    display_taxi(taxis)
+    display_taxis(taxis)
     try:
         taxi_choice = int(input("Choose taxi: "))
         current_taxi = taxis[taxi_choice]
@@ -60,7 +61,7 @@ def choose_taxi(taxis):
         print("Invalid taxi choice")
 
 
-def display_taxi(taxis):
+def display_taxis(taxis):
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
 
