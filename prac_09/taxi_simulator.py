@@ -28,6 +28,10 @@ def main():
         print(MENU)
         choice = input(">>> ").lower()
 
+    print(f"Total trip cost: ${total_cost:.2f}")
+    print("Taxis are now:")
+
+
 
 def drive_taxi(current_taxi, total_cost):
     if current_taxi != None:
@@ -47,14 +51,18 @@ def drive_taxi(current_taxi, total_cost):
 
 def choose_taxi(taxis):
     print("Taxis available:")
-    for i, taxi in enumerate(taxis):
-        print(f"{i} - {taxi}")
+    display_taxi(taxis)
     try:
         taxi_choice = int(input("Choose taxi: "))
         current_taxi = taxis[taxi_choice]
         return current_taxi
     except (ValueError, IndexError):
         print("Invalid taxi choice")
+
+
+def display_taxi(taxis):
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
 
 
 main()
