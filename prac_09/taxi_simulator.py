@@ -16,11 +16,21 @@ def main():
     while choice != "q":
         if choice == "c":
             current_taxi = choose_taxi(taxis)
-
-
+            #print("current taxi: {}".format(current_taxi.name))
 
         elif choice == "d":
-            print("WIP")
+            if current_taxi != None:
+                try:
+                    distance = float(input("Drive how far? "))
+                    current_taxi.start_fare()
+                    current_taxi.drive(distance)
+                    trip_cost = current_taxi.get_fare()
+                    print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+                    total_cost += trip_cost
+                except ValueError:
+                    print("Invalid distance")
+            else:
+                print("You need to choose taxi before you can drive")
 
         else:
             print("Invalid choice")
@@ -34,12 +44,11 @@ def choose_taxi(taxis):
     print("Taxis available:")
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
-    taxi_choice = int(input("Choose taxi: "))
     try:
+        taxi_choice = int(input("Choose taxi: "))
         current_taxi = taxis[taxi_choice]
         return current_taxi
-        # print("current taxi: {}".format(current_taxi.name))
-    except IndexError:
+    except (ValueError, IndexError):
         print("Invalid taxi choice")
 
 
