@@ -15,15 +15,7 @@ def main():
     choice = input(">>> ").lower()
     while choice != "q":
         if choice == "c":
-            print("Taxis available:")
-            for i, taxi in enumerate(taxis):
-                print(f"{i} - {taxi}")
-            taxi_choice = int(input("Choose taxi: "))
-            try:
-                current_taxi = taxis[taxi_choice]
-                #print("current taxi: {}".format(current_taxi.name))
-            except IndexError:
-                print("Invalid taxi choice")
+            current_taxi = choose_taxi(taxis)
 
 
 
@@ -38,6 +30,17 @@ def main():
         choice = input(">>> ").lower()
 
 
+def choose_taxi(taxis):
+    print("Taxis available:")
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
+    taxi_choice = int(input("Choose taxi: "))
+    try:
+        current_taxi = taxis[taxi_choice]
+        return current_taxi
+        # print("current taxi: {}".format(current_taxi.name))
+    except IndexError:
+        print("Invalid taxi choice")
 
 
 main()
