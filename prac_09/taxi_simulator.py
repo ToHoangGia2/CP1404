@@ -8,3 +8,14 @@ def main():
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
 
     current_taxi = None
+
+    print("Let's drive!")
+    print(MENU)
+    choice = input(">>> ").lower()
+    while choice != "q":
+        if choice == "c":
+            print("WIP")
+        elif choice == "d":
+            print("WIP")
+        else:
+            print("Invalid choice")
